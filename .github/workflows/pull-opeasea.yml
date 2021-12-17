@@ -25,11 +25,11 @@ jobs:
       - name: setup python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8 #install the python needed
+          python-version: 3.8
       
-      - name: execute py script # run the run.py to get the latest data
+      - name: execute py script 
         run: |
-          python run.py
+          python update.py
 
       - name: commit
         run: |
