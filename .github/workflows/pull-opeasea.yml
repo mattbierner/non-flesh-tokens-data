@@ -1,0 +1,38 @@
+name: Pull collection data from OpenSea
+on:
+  - schedule:
+    # Every five minutes 
+    - cron: '*/5 * * * *'
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: save current date
+        run: |
+          # do some operation that changes a file in the git repo
+          date > time.txt
+
+      - name: setup git config
+        run: |
+          # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8 #install the python needed
+      
+      - name: execute py script # run the run.py to get the latest data
+        run: |
+          python run.py
+
+      - name: commit
+        run: |
+          # Stage the file, commit and push
+          git add data.json
+          git commit -m "Update"
+          git push origin master
