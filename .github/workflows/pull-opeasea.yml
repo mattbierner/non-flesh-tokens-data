@@ -1,5 +1,6 @@
 name: Pull collection data from OpenSea
 on:
+  workflow_dispatch:
   schedule:
     # Every five minutes
     - cron: '*/5 * * * *'
