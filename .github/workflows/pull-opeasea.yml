@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   schedule:
     # Every five minutes
-    - cron: '*/5 * * * *'
+    - cron: '*/15 * * * *'
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
