@@ -2,7 +2,7 @@ name: Pull collection data from OpenSea
 on:
   workflow_dispatch:
   schedule:
-    # Every five minutes
+    # Every 15 minutes
     - cron: '*/15 * * * *'
 jobs:
   Explore-GitHub-Actions:
