@@ -1,7 +1,7 @@
 name: Pull collection data from OpenSea
 on:
-  - schedule:
-    # Every five minutes 
+  schedule:
+    # Every five minutes
     - cron: '*/5 * * * *'
 jobs:
   Explore-GitHub-Actions:
